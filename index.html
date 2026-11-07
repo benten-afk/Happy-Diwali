@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Diwali ✨ The Magic Surprise</title>
+<style>
+/* ===== THEME ===== */
+:root{--bg:#1a0536;--bg2:#3d0b60;--tx:#fff4e0;--gold:#ffc83d;--or:#ff8a1f;--pk:#ff3d9a;--gl:rgba(255,255,255,.08);--bd:rgba(255,200,61,.35)}
+body.light{--bg:#fff3dc;--bg2:#ffd2a0;--tx:#3a0a3c;--gl:rgba(255,255,255,.65);--bd:rgba(200,90,0,.45)}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Palatino Linotype',serif;color:var(--tx);background:radial-gradient(circle at 20% 0,var(--bg2),var(--bg) 65%) fixed;min-height:100vh;overflow-x:hidden}
+button,select,input{font:inherit;color:inherit}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.7;background-image:radial-gradient(2px 2px at 10% 20%,#fff,transparent),radial-gradient(2px 2px at 70% 10%,#ffe27a,transparent),radial-gradient(1.5px 1.5px at 40% 60%,#fff,transparent),radial-gradient(2px 2px at 85% 70%,#ff9ad0,transparent),radial-gradient(1.5px 1.5px at 25% 85%,#ffe27a,transparent);animation:tw 4s ease-in-out infinite alternate}
+body.light .stars{opacity:.25}
+@keyframes tw{to{opacity:.25}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:500}
+/* ===== COMMON ===== */
+.glass{background:var(--gl);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--bd);border-radius:18px;box-shadow:0 0 25px rgba(255,138,31,.15)}
+.gt{font-size:clamp(2.4rem,9vw,5.5rem);text-align:center;cursor:pointer;background:linear-gradient(90deg,#ffe27a,#ff8a1f,#ff3d9a,#ffe27a);background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 5s linear infinite;filter:drop-shadow(0 0 18px rgba(255,170,40,.55));user-select:none}
+@keyframes sh{to{background-position:200%}}
+.cta{border:0;cursor:pointer;padding:12px 26px;border-radius:40px;font-weight:bold;letter-spacing:1px;color:#2a0640;background:linear-gradient(135deg,var(--gold),var(--or));box-shadow:0 0 22px rgba(255,160,40,.6);transition:transform .2s,box-shadow .2s}
+.cta:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 0 34px rgba(255,160,40,.9)}
+.sec{position:relative;z-index:1;padding:56px 16px;max-width:1000px;margin:auto}
+.sec h2{text-align:center;font-size:clamp(1.6rem,5vw,2.4rem);color:var(--gold);margin-bottom:22px;text-shadow:0 0 14px rgba(255,160,40,.5)}
+.pat{overflow:hidden;white-space:nowrap;text-align:center;color:var(--gold);opacity:.7;letter-spacing:6px;margin:10px 0}
+.grid{display:grid;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+/* ===== INTRO ===== */
+#intro{position:fixed;inset:0;z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px;text-align:center;background:radial-gradient(circle at 50% 30%,#4a0f73,#12032a 70%);transition:opacity 1s,transform 1s}
+#intro.out{opacity:0;transform:scale(1.15);pointer-events:none}
+.lants{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-around;font-size:2.6rem}
+.ln{transform-origin:top center;animation:sw 3s ease-in-out infinite alternate;cursor:pointer;filter:drop-shadow(0 0 14px #ff9b2f)}
+.ln:nth-child(even){animation-delay:-1.5s}
+@keyframes sw{from{transform:rotate(-8deg)}to{transform:rotate(8deg)}}
+.rg{position:absolute;width:min(85vw,520px);aspect-ratio:1;border-radius:50%;opacity:.35;background:repeating-conic-gradient(var(--pk) 0 10deg,var(--gold) 10deg 20deg,var(--or) 20deg 30deg,transparent 30deg 40deg);-webkit-mask:radial-gradient(circle,transparent 30%,#000 31% 70%,transparent 71%);mask:radial-gradient(circle,transparent 30%,#000 31% 70%,transparent 71%);animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#intro>*:not(.rg):not(.lants){position:relative}
+.diyas{font-size:2.2rem;display:flex;gap:10px}
+.diyas span,.fl2{animation:fk 1.2s ease-in-out infinite alternate;filter:drop-shadow(0 0 10px #ffb02e)}
+.diyas span:nth-child(even){animation-delay:-.6s}
+@keyframes fk{to{transform:scale(1.15) translateY(-3px);filter:drop-shadow(0 0 20px #ffd24a)}}
+/* ===== NAV / HERO ===== */
+nav{position:sticky;top:0;z-index:100;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;padding:8px;background:rgba(20,4,45,.75);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+body.light nav{background:rgba(255,240,215,.85)}
+nav a,nav button{background:none;border:1px solid transparent;border-radius:20px;padding:6px 12px;cursor:pointer;text-decoration:none;color:var(--tx);font-size:.95rem}
+nav a:hover,nav button:hover{border-color:var(--gold);background:var(--gl)}
+.hero{position:relative;z-index:1;text-align:center;padding:60px 16px 30px}
+.hero p{margin:14px auto 22px;max-width:560px;font-size:1.15rem}
+.tr{position:absolute;opacity:.18;cursor:pointer;font-style:normal;font-size:1.3rem;transition:.3s;z-index:3}
+.tr:hover,.tr.fd{opacity:1;filter:drop-shadow(0 0 8px gold)}
+/* ===== CARDS ===== */
+.gg{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.gc{padding:16px 8px;text-align:center;cursor:pointer;transition:.25s;position:relative}
+.gc:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 0 28px rgba(255,138,31,.55)}
+.gc b{display:block;font-size:2.2rem}
+.gc.ok::after{content:'✅';position:absolute;top:6px;right:8px}
+.fm{padding:20px;display:grid;gap:10px;max-width:560px;margin:auto}
+.fm input,.fm select,#lv{padding:10px 12px;border-radius:12px;border:1px solid var(--bd);background:var(--gl)}
+.fm select option,#lv option{color:#222}
+#out{min-height:70px;padding:14px;border-radius:12px;background:rgba(0,0,0,.2);white-space:pre-wrap}
+.box{font-size:2.6rem;background:var(--gl);border:1px solid var(--bd);border-radius:16px;padding:14px;cursor:pointer;transition:.25s}
+.box:hover{transform:scale(1.12) rotate(-6deg)}
+.wc{width:150px;min-height:110px;padding:12px;cursor:pointer;display:grid;place-items:center;text-align:center;transition:.3s;font-size:.95rem}
+.wc:hover{box-shadow:0 0 26px var(--pk)}
+.scw{position:relative;width:300px;max-width:100%;height:150px;margin:auto;border-radius:14px;overflow:hidden}
+.scw div{position:absolute;inset:0;display:grid;place-items:center;padding:10px;text-align:center;background:linear-gradient(135deg,#7a2cff,#ff3d9a)}
+#sc{position:absolute;inset:0;width:100%;height:100%;touch-action:none;transition:opacity 1s;cursor:crosshair}
+.bar{height:14px;border-radius:9px;background:var(--gl);overflow:hidden;border:1px solid var(--bd)}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--pk));transition:width .6s}
+.bd{width:130px;padding:14px 6px;text-align:center;filter:grayscale(1);opacity:.45;transition:.4s}
+.bd.on{filter:none;opacity:1;box-shadow:0 0 26px var(--gold)}
+.bd b{font-size:2rem;display:block}
+footer{position:relative;z-index:1;text-align:center;padding:30px 16px 50px}
+/* ===== GAME MODAL ===== */
+#gm{position:fixed;inset:0;background:rgba(10,0,25,.82);display:grid;place-items:center;z-index:200;padding:12px}
+.mdl{width:min(520px,100%);max-height:92vh;overflow:auto;padding:16px;background:var(--bg)}
+.mh{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:8px}
+.mh h3{font-size:1.1rem;flex:1;color:var(--gold)}
+#x{background:none;border:0;font-size:1.4rem;cursor:pointer}
+#hd{min-height:26px;text-align:center;margin-bottom:8px;font-weight:bold}
+#gb p{text-align:center;margin:8px 0}
+.tile{aspect-ratio:1;font-size:1.7rem;border-radius:14px;border:1px solid var(--bd);background:var(--gl);cursor:pointer;display:grid;place-items:center;transition:.2s;touch-action:manipulation;color:var(--tx)}
+.tile small{font-size:.6rem}
+.tile:hover:not(:disabled){transform:scale(1.06);background:rgba(255,200,61,.25)}
+.tile.on{transform:scale(1.08);filter:brightness(1.6);box-shadow:0 0 18px var(--gold)}
+.tile:disabled{color:var(--tx)}
+.area{position:relative;height:300px;overflow:hidden;border-radius:14px;border:1px solid var(--bd);background:rgba(0,0,0,.25);touch-action:manipulation}
+.st{position:absolute;font-size:2rem;cursor:pointer;user-select:none;padding:6px}
+.fall{animation:fall var(--d) linear forwards}
+@keyframes fall{from{top:-50px}to{top:300px}}
+.opt{display:block;width:100%;margin:8px 0;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--gl);cursor:pointer;color:var(--tx)}
+.opt.good{background:#1f9d55;color:#fff}.opt.bad{background:#c0392b;color:#fff}
+.big{font-size:4rem;background:none;border:0;cursor:pointer;animation:fk .5s infinite alternate}
+.res{text-align:center;margin-top:14px;padding:14px;border-radius:14px;background:rgba(255,200,61,.15)}
+.res .cta{margin-top:10px}
+.wr{position:relative;width:240px;height:260px;margin:auto}
+.wheel{position:relative;width:240px;height:240px;margin-top:20px;border-radius:50%;border:5px solid var(--gold);background:repeating-conic-gradient(#ff3d9a 0 45deg,#ffc83d 45deg 90deg,#9b4dff 90deg 135deg,#ff8a1f 135deg 180deg);transition:transform 4s cubic-bezier(.17,.67,.2,1)}
+.wheel span{position:absolute;left:calc(50% - 14px);top:calc(50% - 16px);font-size:1.6rem}
+.ptr{position:absolute;top:0;left:calc(50% - 12px);font-size:1.6rem;font-style:normal;color:var(--gold);z-index:2}
+.fl{position:fixed;pointer-events:none;z-index:400;font-size:1.6rem;animation:rise 2s ease-out forwards}
+@keyframes rise{to{transform:translateY(-130px) scale(1.5);opacity:0}}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(100px);z-index:450;padding:12px 20px;border-radius:30px;background:#2a0640;color:#ffe9b0;border:1px solid var(--gold);transition:.4s;max-width:90vw;text-align:center}
+#toast.show{transform:translateX(-50%)}
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.area .fall{animation-duration:var(--d)!important}.wheel{transition-duration:4s!important}}
+</style>
+</head>
+<body>
+<div class="stars"></div><canvas id="fx"></canvas><div id="toast"></div>
+
+<!-- ===== INTRO ===== -->
+<section id="intro">
+  <div class="lants"><span class="ln">🏮</span><span class="ln">🏮</span><span class="ln">🏮</span><span class="ln">🏮</span></div>
+  <div class="rg"></div>
+  <h1 class="gt">Happy Diwali</h1>
+  <p>May a thousand diyas light up your life ✨</p>
+  <div class="diyas"><span>🪔</span><span>🪔</span><span>🪔</span><span>🪔</span><span>🪔</span></div>
+  <button class="cta" id="enter">ENTER THE MAGIC</button>
+</section>
+
+<!-- ===== APP ===== -->
+<div id="app" hidden>
+<nav>
+  <a href="#home">🏠 Home</a><a href="#greet">💌 Greet</a><a href="#games">🎮 Games</a><a href="#surp">🎁 Surprises</a><a href="#bdg">🏅 Badges</a>
+  <button id="mu" title="Mute / unmute">🔊</button><button id="th" title="Theme">🌙</button><button id="fwb" title="Fireworks">🎆</button><button id="rnd" title="Random surprise">🎲</button>
+</nav>
+
+<header class="hero" id="home">
+  <i class="tr" data-n="0" style="left:12%;top:40px">🪙</i>
+  <span class="ln" id="secret" style="display:inline-block;font-size:2.4rem" title="Tap me">🏮</span>
+  <h1 class="gt" id="ttl">Shubh Deepavali</h1>
+  <p>Welcome to your festival of surprises — 12 games, hidden gifts, secret messages and blessings. Tap anything. Everything glows. 🪔</p>
+  <div class="row"><a class="cta" href="#games" style="text-decoration:none">🎮 Start Playing</a><button class="cta" onclick="fw(6)">🎆 Fireworks</button><button class="cta" onclick="surprise()">🎲 Surprise Me</button></div>
+  <div class="pat"></div>
+</header>
+
+<section class="sec" id="greet">
+  <h2>💌 Personal Diwali Wish</h2>
+  <div class="glass fm">
+    <input id="fr" placeholder="Your name" maxlength="30">
+    <input id="to" placeholder="Recipient's name" maxlength="30">
+    <select id="tn"><option>Warm</option><option>Funny</option><option>Poetic</option></select>
+    <button class="cta" id="gen">✨ Generate Wish</button>
+    <div id="out">Your wish will appear here…</div>
+    <div class="row"><button class="cta" id="cp">📋 Copy</button><button class="cta" id="sh">📤 Share</button></div>
+  </div>
+</section>
+
+<section class="sec" id="games">
+  <i class="tr" data-n="1" style="right:8%;top:20px">🪙</i>
+  <h2>🎮 12 Mini-Games</h2>
+  <div class="glass" style="padding:14px;margin-bottom:18px"><div class="bar"><i id="pb"></i></div><p id="pt" style="text-align:center;margin-top:6px"></p></div>
+  <div class="grid gg" id="gl"></div>
+</section>
+
+<section class="sec" id="surp">
+  <i class="tr" data-n="2" style="left:5%;top:30px">🪙</i>
+  <h2>🎁 Mystery Gifts</h2>
+  <div class="row" id="bx"></div>
+  <h2 style="margin-top:46px">🪔 Tap-to-Reveal Wishes</h2>
+  <div class="row" id="ws"></div>
+  <h2 style="margin-top:46px">🎟️ Scratch Card</h2>
+  <div class="scw"><div id="sm"></div><canvas id="sc" width="300" height="150"></canvas></div>
+  <div class="row" style="margin-top:12px"><button class="cta" id="sr">🔄 New card</button><button class="cta" onclick="toast(R(BL))">🙏 Random Blessing</button></div>
+</section>
+
+<section class="sec" id="bdg">
+  <i class="tr" data-n="3" style="right:6%;top:20px">🪙</i>
+  <h2>🏅 Achievement Badges</h2>
+  <div class="row" id="bl"></div>
+</section>
+
+<footer>
+  <div class="pat"></div>
+  <p>Made with 🪔 light &amp; ❤️ — Wishing you joy, health &amp; prosperity.</p>
+  <p style="margin-top:8px"><span id="cr" style="cursor:pointer">©</span> 2026 Diwali Magic · Happy Diwali!</p>
+  <i class="tr" data-n="4" style="position:relative;display:inline-block;margin-top:10px">🪙</i>
+</footer>
+</div>
+
+<!-- ===== GAME MODAL ===== -->
+<div id="gm" hidden><div class="glass mdl">
+  <div class="mh"><h3 id="gtl"></h3>
+    <select id="lv"><option value="0">Easy</option><option value="1">Medium</option><option value="2">Hard</option></select>
+    <button id="x" aria-label="Close">✕</button></div>
+  <div id="hd"></div><div id="gb"></div>
+</div></div>
+
+<script>
+/* ============ HELPERS ============ */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const R=a=>a[Math.random()*a.length|0],shuf=a=>a.sort(()=>Math.random()-.5);
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let store={};try{store=JSON.parse(localStorage.getItem('dw')||'{}')}catch(e){}
+store.done=store.done||{};store.badges=store.badges||{};store.tr=store.tr||[];
+const save=()=>{try{localStorage.setItem('dw',JSON.stringify(store))}catch(e){}};
+function btn(h,c,f){const b=document.createElement('button');b.innerHTML=h;b.className=c||'';if(f)b.onclick=f;return b}
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3200)}
+function flo(e,x,y){const s=document.createElement('span');s.className='fl';s.textContent=e;s.style.left=x+'px';s.style.top=y+'px';document.body.append(s);setTimeout(()=>s.remove(),2000)}
+const T=[];const ev=(f,ms)=>{const i=setInterval(f,ms);T.push(i);return i},af=(f,ms)=>{const i=setTimeout(f,ms);T.push(i);return i},clr=()=>{T.forEach(t=>{clearInterval(t);clearTimeout(t)});T.length=0};
+
+/* ============ AUDIO (starts only after a user click) ============ */
+let AC,muted=false;
+function ac(){if(!AC){try{AC=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(AC&&AC.state==='suspended')AC.resume()}
+function tone(f,d=.15,t='sine',v=.07){if(!AC||muted)return;try{const o=AC.createOscillator(),g=AC.createGain();o.type=t;o.frequency.value=f;g.gain.setValueAtTime(v,AC.currentTime);g.gain.exponentialRampToValueAtTime(.001,AC.currentTime+d);o.connect(g);g.connect(AC.destination);o.start();o.stop(AC.currentTime+d)}catch(e){}}
+const sfx={ok:()=>{tone(660,.1);setTimeout(()=>tone(880,.15),90)},bad:()=>tone(150,.25,'sawtooth',.05),pop:()=>tone(300+Math.random()*500,.08,'triangle'),win:()=>[523,659,784,1046].forEach((f,i)=>setTimeout(()=>tone(f,.25),i*110))};
+const SC=[523,587,659,784,880,784,659,587];let ni=0;
+function music(){setInterval(()=>{tone(SC[ni%8]*(ni%32<16?1:.75),.6,'sine',.035);ni++},480)}
+
+/* ============ FIREWORKS & CONFETTI ============ */
+const cv=$('#fx'),cx=cv.getContext('2d');let P=[];
+function rs(){cv.width=innerWidth;cv.height=innerHeight}addEventListener('resize',rs);rs();
+function burst(x,y,n=60,conf){const h=Math.random()*360;for(let i=0;i<n;i++){const a=Math.random()*6.283,s=Math.random()*6+1;P.push({x,y,vx:Math.cos(a)*s,vy:conf?Math.abs(Math.sin(a))*s+1:Math.sin(a)*s,l:1,q:conf,c:'hsl('+(conf?Math.random()*360:h+Math.random()*40)+',100%,60%)'})}}
+function fw(n=5){if(rm)n=1;for(let i=0;i<n;i++)setTimeout(()=>{burst(Math.random()*innerWidth,Math.random()*innerHeight*.6+30);sfx.pop()},i*300)}
+function confetti(){if(rm)return;for(let i=0;i<5;i++)burst(Math.random()*innerWidth,-10,40,1)}
+(function loop(){cx.clearRect(0,0,cv.width,cv.height);P=P.filter(p=>p.l>0&&p.y<cv.height+20);for(const p of P){p.x+=p.vx;p.y+=p.vy;p.vy+=.07;p.vx*=.99;p.l-=.011;cx.globalAlpha=Math.max(p.l,0);cx.fillStyle=p.c;p.q?cx.fillRect(p.x,p.y,7,4):(cx.beginPath(),cx.arc(p.x,p.y,2.3,0,6.3),cx.fill())}requestAnimationFrame(loop)})();
+const amb=setInterval(()=>burst(Math.random()*innerWidth,Math.random()*innerHeight*.6),1500);
+
+/* ============ INTRO ============ */
+$('#enter').onclick=()=>{ac();music();clearInterval(amb);$('#intro').classList.add('out');$('#app').hidden=false;fw(6);confetti();setTimeout(()=>$('#intro').remove(),1100);toast('🪔 Welcome! Tap anything — surprises are everywhere.')};
+$$('.pat').forEach(p=>p.textContent='❁ ✦ '.repeat(60));
+document.addEventListener('pointerdown',e=>{if($('#app').hidden||Math.random()>.5)return;flo(R(['💖','⭐','✨','🪔','🌸']),e.clientX,e.clientY)});
+
+/* ============ NAV BUTTONS / THEME ============ */
+$('#mu').onclick=function(){muted=!muted;this.textContent=muted?'🔇':'🔊'};
+function theme(){document.body.classList.toggle('light',!!store.light);$('#th').textContent=store.light?'☀️':'🌙'}
+$('#th').onclick=()=>{store.light=!store.light;save();theme()};theme();
+$('#fwb').onclick=()=>fw(7);$('#rnd').onclick=()=>surprise();
+const BL=['May Lakshmi bless your home with prosperity 🪷','May every diya brighten a new dream 🪔','Sweet days and sweeter moments are coming 🍬','Health, wealth and happiness walk with you 🌟','May light win over every shadow ✨','You are loved more than you know ❤️','A year of success starts today 🎆','Your smile is the brightest light of all 🌸'];
+function surprise(){R([()=>{fw(6);toast('🎆 Fireworks just for you!')},()=>{confetti();toast(R(BL))},()=>{for(let i=0;i<14;i++)setTimeout(()=>flo(R(['💖','⭐','💛']),Math.random()*innerWidth,innerHeight*.8),i*80);toast('💖 Sending you love!')},()=>play(R([...Array(12).keys()])),()=>{toast(R(BL));sfx.win()}])()}
+
+/* ============ GREETING GENERATOR ============ */
+const TM={Warm:(f,t)=>`Dear ${t||'friend'},\nMay the light of a thousand diyas fill your home with joy, health and prosperity. Happy Diwali! 🪔\n— ${f||'Someone who cares'}`,Funny:(f,t)=>`Hey ${t||'buddy'}! 🧨\nMay your sweets be endless, your Wi-Fi be strong and your fireworks never scare the cat. Happy Diwali!\n— ${f||'Your favourite human'}`,Poetic:(f,t)=>`${t||'Dear soul'}, 🌸\nWhen the diyas bloom like golden stars, may your heart find peace and every dream find wings. Shubh Deepavali.\n— ${f||'With love'}`};
+let wish='';
+$('#gen').onclick=()=>{wish=TM[$('#tn').value]($('#fr').value.trim(),$('#to').value.trim());$('#out').textContent=wish;confetti();sfx.ok();store.badges.wish=1;save();prog()};
+function gw(){if(!wish)$('#gen').click();return wish}
+$('#cp').onclick=async()=>{const w=gw();try{await navigator.clipboard.writeText(w)}catch(e){const t=document.createElement('textarea');t.value=w;document.body.append(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove()}toast('📋 Copied!')};
+$('#sh').onclick=async()=>{const w=gw();if(navigator.share){try{await navigator.share({title:'Happy Diwali!',text:w})}catch(e){}}else{$('#cp').click()}};
+
+/* ============ SURPRISES ============ */
+const GF=[()=>{fw(4);toast('🎆 A burst of fireworks!')},()=>{confetti();toast(R(BL))},()=>toast('🍬 A virtual box of sweets for you!'),()=>{toast('🪙 You found a golden coin!');sfx.win()},()=>{for(let i=0;i<10;i++)setTimeout(()=>flo('💖',Math.random()*innerWidth,innerHeight*.8),i*90);toast('💖 Hearts!')},()=>toast('🔮 Secret: the 🪙 coins hide faintly around this page!')];
+for(let i=0;i<6;i++)$('#bx').append(btn('🎁','box',function(){this.textContent='🎉';this.disabled=true;sfx.ok();R(GF)()}));
+['You will smile a lot today 😊','A pleasant surprise is on its way 🎁','Your hard work will shine ✨','Someone is thinking of you 💌','Prosperity knocks at your door 🪙','Peace and joy fill your year 🕊️'].forEach(t=>{const c=btn('🪔 Tap me','glass wc',function(){this.textContent=this.textContent.includes('Tap')?t:'🪔 Tap me';sfx.pop();burst(this.getBoundingClientRect().left+75,this.getBoundingClientRect().top+50,25)});$('#ws').append(c)});
+$('#secret').onclick=()=>{toast('🤫 Secret message: the best light is the one you share with others.');fw(2)};
+// Scratch card
+const sc=$('#sc'),sx=sc.getContext('2d');let sd=0,sv=0;
+function card(){sv=0;sc.style.opacity=1;$('#sm').textContent=R(BL);sx.globalCompositeOperation='source-over';const g=sx.createLinearGradient(0,0,300,150);g.addColorStop(0,'#ffc83d');g.addColorStop(1,'#ff8a1f');sx.fillStyle=g;sx.fillRect(0,0,300,150);sx.fillStyle='#7a3b00';sx.font='18px Georgia';sx.textAlign='center';sx.fillText('✨ Scratch here ✨',150,80);sx.globalCompositeOperation='destination-out'}
+function sm(e){if(!sd)return;const r=sc.getBoundingClientRect();sx.beginPath();sx.arc((e.clientX-r.left)*300/r.width,(e.clientY-r.top)*150/r.height,16,0,6.3);sx.fill()}
+sc.onpointerdown=e=>{sd=1;sc.setPointerCapture(e.pointerId);sm(e)};sc.onpointermove=sm;
+sc.onpointerup=()=>{sd=0;if(sv)return;const p=sx.getImageData(0,0,300,150).data;let n=0;for(let i=3;i<p.length;i+=16)if(!p[i])n++;if(n>p.length/16*.45){sv=1;sc.style.opacity=0;confetti();sfx.win()}};
+$('#sr').onclick=card;card();
+
+/* ============ PROGRESS & BADGES ============ */
+const BD=[['🥉','First Spark',n=>n>=1],['🥈','Festival Star',n=>n>=6],['🥇','Diwali Master',n=>n>=12],['🥚','Egg Hunter',()=>store.badges.egg],['👨‍💻','Code Finder',()=>store.badges.dev],['💌','Wish Giver',()=>store.badges.wish]];
+function prog(){const n=Object.keys(store.done).length;$('#pb').style.width=n/12*100+'%';$('#pt').textContent=n+' / 12 games completed'+(n==12?' 🏆':'');$('#bl').innerHTML='';BD.forEach(([i,t,f])=>{const d=document.createElement('div');d.className='glass bd'+(f(n)?' on':'');d.innerHTML='<b>'+i+'</b>'+t;$('#bl').append(d)})}
+function done(i){if(!store.done[i]){store.done[i]=1;save();rg();prog();toast('🎉 Game complete! Progress saved.')}}
+// Easter eggs
+let tc=0,cc=0;
+$('#ttl').onclick=()=>{if(++tc==5){tc=0;store.badges.egg=1;save();prog();for(let i=0;i<3;i++)setTimeout(confetti,i*400);fw(6);toast('🥚 Easter egg! You woke the golden title.')}};
+$('#cr').onclick=()=>{if(++cc==7){cc=0;store.badges.dev=1;save();prog();fw(8);toast('👨‍💻 Dev secret: coded with ❤️ and way too much chai ☕')}};
+// Treasure hunt items
+$$('.tr').forEach(e=>{if(store.tr.includes(+e.dataset.n))e.classList.add('fd');e.onclick=()=>{const n=+e.dataset.n;e.classList.add('fd');if(!store.tr.includes(n)){store.tr.push(n);save();sfx.ok();const r=e.getBoundingClientRect();burst(r.left,r.top,30);toast('🗝️ Treasure '+store.tr.length+'/5 found!');if(store.tr.length==5)done(11)}}});
+
+/* ============ GAME ENGINE ============ */
+const B=$('#gb');let lv=0,cur=0;
+const hud=t=>$('#hd').textContent=t;
+function end(i,w,m){clr();$$('#gb button').forEach(x=>x.disabled=1);if(w){done(i);sfx.win();confetti()}else sfx.bad();const d=document.createElement('div');d.className='res';d.innerHTML='<h3>'+(w?'🏆 You won!':'Nice try!')+'</h3><p>'+m+'</p>';d.append(btn('↻ Play again','cta',()=>play(i)));B.append(d)}
+function play(i){clr();cur=i;lv=+$('#lv').value;$('#gm').hidden=false;$('#gtl').textContent=G[i][1]+' '+G[i][0];hud('');B.innerHTML='';G[i][2]()}
+$('#lv').onchange=()=>play(cur);
+$('#x').onclick=()=>{clr();$('#gm').hidden=true;B.innerHTML=''};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#x').click()});
+
+/* 1. Memory Match */
+function g0(){const n=[6,8,10][lv],em=['🪔','🎆','🪷','🍬','🎁','⭐','🧨','🌸','🪁','🔔'].slice(0,n);let open=[],m=0,mv=0;B.innerHTML='<div class="grid" style="grid-template-columns:repeat(4,1fr)"></div>';
+shuf([...em,...em]).forEach(e=>{const b=btn('?','tile');b.onclick=()=>{if(b.classList.contains('on')||open.length>1)return;b.textContent=e;b.classList.add('on');open.push(b);sfx.pop();if(open.length==2){mv++;hud('Moves: '+mv);const[a,d]=open;if(a.textContent==d.textContent){m++;open=[];sfx.ok();if(m==n)end(0,1,'Cleared in '+mv+' moves!')}else af(()=>{open.forEach(x=>{x.textContent='?';x.classList.remove('on')});open=[]},700)}};B.firstChild.append(b)})}
+/* 2. Secret Diya Hunt */
+function g1(){const n=[9,12,16][lv],c=n==9?3:4,w=Math.random()*n|0;let tr=[4,5,6][lv];B.innerHTML='<div class="grid" style="grid-template-columns:repeat('+c+',1fr)"></div>';hud('Tries left: '+tr);
+for(let i=0;i<n;i++){const b=btn('🪨','tile');b.onclick=()=>{if(b.disabled)return;b.disabled=1;if(i==w){b.textContent='🪔';end(1,1,'You found the hidden diya!')}else{tr--;const h=Math.abs((i/c|0)-(w/c|0))<2&&Math.abs(i%c-w%c)<2;b.textContent=h?'🔥':'❄️';sfx.bad();hud((h?'Very warm! ':'Cold. ')+'Tries left: '+tr);if(!tr)end(1,0,'The diya was hiding elsewhere.')}};B.firstChild.append(b)}}
+/* 3. Catch the Stars */
+function g2(){let s=0,t=20;const need=[10,15,22][lv],u=()=>hud('⭐ '+s+'/'+need+'  ·  ⏱ '+t);B.innerHTML='<div class="area"></div>';const a=B.firstChild;u();
+ev(()=>{const e=document.createElement('span');e.className='st fall';e.textContent='⭐';e.style.left=Math.random()*85+'%';e.style.setProperty('--d',[3.2,2.5,1.9][lv]+'s');e.onpointerdown=()=>{if(e.dead)return;e.dead=1;s++;sfx.pop();e.remove();u()};e.onanimationend=()=>e.remove();a.append(e)},[750,550,400][lv]);
+ev(()=>{t--;u();if(t<=0)end(2,s>=need,'Caught '+s+' stars (needed '+need+')')},1000)}
+/* 4. Rangoli Memory */
+function g3(){const cs=['#ff3d9a','#ffc83d','#3dd6ff','#7dff6a'],tg=[5,7,9][lv];let seq=[],pos=0,lock=1;B.innerHTML='<div class="grid" style="grid-template-columns:1fr 1fr"></div>';
+const fl=i=>{bs[i].classList.add('on');tone(300+i*120,.25);af(()=>bs[i].classList.remove('on'),320)};
+const bs=cs.map((c,i)=>{const b=btn('','tile');b.style.background=c;b.onclick=()=>{if(lock)return;fl(i);if(i!=seq[pos]){lock=1;sfx.bad();end(3,0,'You reached round '+seq.length)}else if(++pos==seq.length){if(seq.length==tg)end(3,1,'A perfect rangoli!');else{lock=1;af(next,800)}}};B.firstChild.append(b);return b});
+function next(){seq.push(Math.random()*4|0);pos=0;hud('Round '+seq.length+'/'+tg+' — watch!');seq.forEach((s,k)=>af(()=>fl(s),k*600+300));af(()=>{lock=0;hud('Round '+seq.length+'/'+tg+' — your turn!')},seq.length*600+300)}next()}
+/* 5. Crack the Firecracker */
+function g4(){let s=0,t=15;const need=[8,12,16][lv],u=()=>hud('🧨 '+s+'/'+need+'  ·  ⏱ '+t);B.innerHTML='<div class="area"></div>';const a=B.firstChild;u();
+ev(()=>{const e=document.createElement('span');e.className='st';e.textContent='🧨';e.style.left=Math.random()*85+'%';e.style.top=Math.random()*80+'%';e.onpointerdown=()=>{s++;const r=e.getBoundingClientRect();burst(r.left+15,r.top+15,35);sfx.pop();e.remove();u()};a.append(e);af(()=>e.remove(),[1400,1100,800][lv])},[800,650,500][lv]);
+ev(()=>{t--;u();if(t<=0)end(4,s>=need,'Popped '+s+' crackers (needed '+need+')')},1000)}
+/* 6. Gift Box Mystery */
+function g5(){let r=0,s=0;const n=[3,4,5][lv];function rd(){if(r==5)return end(5,s>=3,s+'/5 gifts found');r++;hud('Round '+r+'/5 · Score '+s);const w=Math.random()*n|0;B.innerHTML='<p>Which box hides the gift?</p><div class="grid" style="grid-template-columns:repeat(3,1fr)"></div>';for(let i=0;i<n;i++){const b=btn('🎁','tile');b.onclick=()=>{const ok=i==w;b.textContent=ok?'🌟':'💨';if(ok){s++;sfx.ok()}else sfx.bad();$$('#gb .tile').forEach(x=>x.disabled=1);af(rd,800)};B.lastChild.append(b)}}rd()}
+/* 7. Diwali Quiz */
+const QZ=[['What is Diwali popularly called?','Festival of Lights',['Festival of Colours','Festival of Kites','Harvest Festival']],['Which goddess is worshipped on Diwali?','Lakshmi',['Saraswati','Durga','Parvati']],['What are the small clay lamps called?','Diyas',['Kites','Bangles','Torans']],['Whose return to Ayodhya is celebrated?','Lord Rama',['Lord Indra','Lord Surya','Lord Hanuman']],['What is the colourful floor art called?','Rangoli',['Mehndi','Alpana','Batik']],['Which sweet is commonly shared?','Laddoo',['Pizza','Pasta','Burger']],['Diwali falls in which Hindu month?','Kartika',['Magha','Chaitra','Shravana']]];
+function g6(){const q=shuf([...QZ]).slice(0,5);let i=0,s=0;function n(){if(i==5)return end(6,s>=3,'Score: '+s+'/5');const[t,a,w]=q[i];hud('Q'+(i+1)+'/5 · Score '+s);B.innerHTML='<p><b>'+t+'</b></p>';shuf([a,...w]).forEach(o=>{const b=btn(o,'opt');b.onclick=()=>{const ok=o==a;b.classList.add(ok?'good':'bad');if(ok){s++;sfx.ok()}else sfx.bad();$$('#gb .opt').forEach(x=>x.disabled=1);i++;af(n,800)};B.append(b)})}n()}
+/* 8. Lucky Spin Wheel */
+const W8=[['🪔','May your home glow with joy!'],['💰','Prosperity is coming your way!'],['🍬','Sweet times ahead!'],['🎆','Your dreams will light up the sky!'],['❤️','Love surrounds you!'],['🌟','Success will shine on you!'],['🧿','Health and happiness always!'],['🎁','A lovely surprise awaits!']];
+function g7(){let ang=0,bz=0;B.innerHTML='<div class="wr"><div id="wh" class="wheel"></div><i class="ptr">▼</i></div><p id="wo">Spin for a wish!</p>';const w=$('#wh');W8.forEach((x,i)=>w.insertAdjacentHTML('beforeend','<span style="transform:rotate('+(i*45+22.5)+'deg) translateY(-85px)">'+x[0]+'</span>'));
+const b=btn('🎡 SPIN','cta',()=>{if(bz)return;bz=1;ang+=1800+(Math.random()*360|0);w.style.transform='rotate('+ang+'deg)';for(let k=0;k<12;k++)af(()=>tone(400+k*30,.05,'square',.03),k*320);af(()=>{const i=Math.floor(((360-ang%360)%360)/45);$('#wo').textContent=W8[i][0]+' '+W8[i][1];bz=0;sfx.win();confetti();done(7)},4100)});
+const d=document.createElement('div');d.style.textAlign='center';d.append(b);B.append(d)}
+/* 9. Hidden Sweets */
+function g8(){const k=[4,5,7][lv],h=shuf([...Array(25).keys()]).slice(0,k);let f=0,l=[18,16,14][lv];B.innerHTML='<div class="grid" style="grid-template-columns:repeat(5,1fr)"></div>';const u=()=>hud('🍬 '+f+'/'+k+' · Clicks left '+l);u();
+for(let i=0;i<25;i++){const b=btn('🎊','tile');b.onclick=()=>{if(b.disabled)return;b.disabled=1;l--;if(h.includes(i)){f++;b.textContent='🍬';sfx.ok()}else{b.textContent='·';sfx.pop()}u();if(f==k)end(8,1,'Found all '+k+' sweets!');else if(!l)end(8,0,'Found '+f+' of '+k+' sweets')};B.firstChild.append(b)}}
+/* 10. Puzzle Challenge (sliding picture puzzle) */
+function g9(){const a=[0,1,2,3,4,5,6,7,8],E=['🪔','🎆','🪷','🍬','🎁','⭐','🧨','🌸'],nb=i=>[i-3,i+3,i%3?i-1:-1,i%3<2?i+1:-1].filter(j=>j>=0&&j<9);let b=8,m=0;
+const mv=i=>{a[b]=a[i];a[i]=8;b=i};for(let k=0,l=-1;k<[20,60,120][lv];k++){const j=R(nb(b).filter(x=>x!=l));l=b;mv(j)}
+hud('Order the tiles 1 → 8');(function dr(){B.innerHTML='<div class="grid" style="grid-template-columns:repeat(3,1fr);max-width:300px;margin:auto"></div>';a.forEach((v,i)=>{const t=btn(v<8?E[v]+'<small>'+(v+1)+'</small>':'','tile');if(v==8)t.style.opacity=.15;t.onclick=()=>{if(!nb(i).includes(b))return;mv(i);m++;sfx.pop();hud('Moves: '+m);if(a.every((x,k)=>x==k)){dr();end(9,1,'Solved in '+m+' moves!')}else dr()};B.firstChild.append(t)})})()}
+/* 11. Reaction Challenge */
+function g10(){const lim=[600,450,350][lv];let r=0,tm=[],t0,rdy=0,w;B.innerHTML='<div class="area" style="display:grid;place-items:center"></div>';const a=B.firstChild;
+a.onclick=()=>{if(!rdy&&w){clearTimeout(w);sfx.bad();toast('Too soon! Wait for the diya.');af(rd,700)}};
+function rd(){if(r==5){const av=tm.reduce((x,y)=>x+y)/5|0;return end(10,av<lim,'Average '+av+'ms (target under '+lim+'ms)')}a.innerHTML='<p>Wait for the diya…</p>';rdy=0;hud('Round '+(r+1)+'/5');w=af(()=>{rdy=1;a.innerHTML='';t0=performance.now();const b=btn('🪔','big',e=>{e.stopPropagation();const x=performance.now()-t0|0;tm.push(x);r++;rdy=0;w=0;sfx.ok();hud(x+' ms');a.innerHTML='<p><b>'+x+' ms</b></p>';af(rd,800)});a.append(b)},1000+Math.random()*2000)}rd()}
+/* 12. Treasure Hunt */
+function g11(){const C=['Where the golden title glows, a coin hides near the top.','Games love company — look beside the games section.','Surprises hide among the gifts and wishes.','The badges section keeps a shiny secret.','Even the footer holds a tiny treasure.'];
+B.innerHTML=C.map((c,i)=>'<p>'+(store.tr.includes(i)?'✅':'🔍')+' '+c+'</p>').join('')+'<p><b>Close this and tap the faint 🪙 coins you spot around the page!</b></p>';hud(store.tr.length+'/5 coins found')}
+
+const G=[['Memory Match','🧠',g0],['Diya Hunt','🔦',g1],['Catch the Stars','⭐',g2],['Rangoli Memory','🎨',g3],['Firecracker Pop','🧨',g4],['Gift Box Mystery','🎁',g5],['Diwali Quiz','❓',g6],['Lucky Spin Wheel','🎡',g7],['Hidden Sweets','🍬',g8],['Puzzle Challenge','🧩',g9],['Reaction Test','⚡',g10],['Treasure Hunt','🗝️',g11]];
+function rg(){$('#gl').innerHTML='';G.forEach((g,i)=>{const c=document.createElement('div');c.className='glass gc'+(store.done[i]?' ok':'');c.innerHTML='<b>'+g[1]+'</b>'+g[0];c.onclick=()=>play(i);$('#gl').append(c)})}
+rg();prog();
+</script>
+</body>
+</html>
